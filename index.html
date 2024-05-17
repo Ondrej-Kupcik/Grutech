@@ -373,16 +373,15 @@
 
 			<!-- Skript pro načítání dat z Google Sheets -->
 <script>
-	// Načtení obsahu z buňky B1 z Google Sheets
-	fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTt8my6WkbvI9mzRAxVQB485fUIeZrLwgXKfnFS7eOZTP2S16aVIe9pg78TAXFYaQlmpS14NpoKPArC/pubhtml')
-			.then(response => response.json())
-			.then(data => {
-					// Získání elementu pro úpravu textu
-					const editableText = document.getElementById('editable-text');
-					// Nastavení textu z Google Sheets do HTML
-					editableText.textContent = data.values[0][0];
-			})
-			.catch(error => console.error('Error:', error));
+fetch('https://sheets.googleapis.com/v4/spreadsheets/1l7Zz67sMFxjHg8QmEB0sNBcHpYlK8mxZY8k8UYgpju8/values/B1?key=AIzaSyDT-bYMRdXO5b3EZqC4_jsfx1QJ_TStTRA')
+                .then(response => response.json())
+                .then(data => {
+                    // Získání elementu pro úpravu textu
+                    const editableText = document.getElementById('editable-text');
+                    // Nastavení textu z Google Sheets do HTML
+                    editableText.textContent = data.values[0][0];
+                })
+                .catch(error => console.error('Chyba:', error));
 </script>
 
 	</body>
