@@ -23,7 +23,7 @@
 							<header>
 								<h1><a href="index.html" id="logo">Grutech s.r.o.</a></h1>
 								<hr />
-								<p>Jsme firma se specializací na zámečnictví a strojírenské projekty, poskytující špičkové služby a inovativní řešení pro vaše potřeby.</p>
+								<p id="editable-text">Jsme firma se specializací na zámečnictví a strojírenské projekty, poskytující špičkové služby a inovativní řešení pro vaše potřeby.</p>
 							</header>
 							<footer>
 								<a href="#banner" class="button circled scrolly">Start</a>
@@ -370,6 +370,20 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+
+			<!-- Skript pro načítání dat z Google Sheets -->
+<script>
+	// Načtení obsahu z buňky B1 z Google Sheets
+	fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vTt8my6WkbvI9mzRAxVQB485fUIeZrLwgXKfnFS7eOZTP2S16aVIe9pg78TAXFYaQlmpS14NpoKPArC/pubhtml')
+			.then(response => response.json())
+			.then(data => {
+					// Získání elementu pro úpravu textu
+					const editableText = document.getElementById('editable-text');
+					// Nastavení textu z Google Sheets do HTML
+					editableText.textContent = data.values[0][0];
+			})
+			.catch(error => console.error('Error:', error));
+</script>
 
 	</body>
 </html>
