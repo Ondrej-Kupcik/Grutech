@@ -373,15 +373,23 @@
 
 			<!-- Skript pro načítání dat z Google Sheets -->
 <script>
-fetch('https://sheets.googleapis.com/v4/spreadsheets/1l7Zz67sMFxjHg8QmEB0sNBcHpYlK8mxZY8k8UYgpju8/values/B1?key=AIzaSyDT-bYMRdXO5b3EZqC4_jsfx1QJ_TStTRA')
-                .then(response => response.json())
-                .then(data => {
-                    // Získání elementu pro úpravu textu
-                    const editableText = document.getElementById('editable-text');
-                    // Nastavení textu z Google Sheets do HTML
-                    editableText.textContent = data.values[0][0];
-                })
-                .catch(error => console.error('Chyba:', error));
+const spreadsheetId = '1l7Zz67sMFxjHg8QmEB0sNBcHpYlK8mxZY8k8UYgpju8'; // ID vašeho Google Sheets dokumentu
+const range = 'Sheet1!B1'; // Rozsah buněk, který chcete načíst (např. list "Sheet1", buňka "A1")
+const apiKey = 'AIzaSyDT-bYMRdXO5b3EZqC4_jsfx1QJ_TStTRA'; // Váš API klíč
+
+// Vytvoření URL pro dotaz na Google Sheets API
+const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
+
+// Načtení dat z Google Sheets API
+fetch(url)
+    .then(response => response.json())
+    .then(data => {
+        // Získání hodnoty buňky z odpovědi
+        const cellValue = data.values[0][0]; // První řádek, první sloupec
+        // Zobrazení hodnoty buňky
+        console.log('Hodnota buňky A1:', cellValue);
+    })
+    .catch(error => console.error('Chyba:', error));
 </script>
 
 	</body>
