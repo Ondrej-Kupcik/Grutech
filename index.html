@@ -21,23 +21,23 @@
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="index.html" id="logo">Grutech s.r.o.</a></h1>
+								<h1><a href="index.html" id="logo"></a></h1>
 								<hr />
-								<p id="editable-text">Jsme firma se specializací na zámečnictví a strojírenské projekty, poskytující špičkové služby a inovativní řešení pro vaše potřeby.</p>
+								<p id="logo-text"></p>
 							</header>
 							<footer>
 								<a href="#banner" class="button circled scrolly">Start</a>
 							</footer>
 						</div>
 
-					<!-- Nav -->
+					<!-- Menu -->
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
 								<li>
 									<a href="#">Projekty</a>
 									<ul>
-										<li><a href="#">Elektrárna Dukovany</a></li>
+										<li><a href="#" id="menu-projekt1">Dukovany</a></li>
 										<li><a href="#">Třinecké železárny a.s.</a></li>
 										<li><a href="#">Jaderná elektrárna Jaslovské Bohunice</a></li>
 										<li>
@@ -70,7 +70,7 @@
 					</header>
 				</section>
 
-			<!-- Carousel -->
+			<!-- Kolotoč projektů -->
 				<section class="carousel">
 					<div class="reel">
 
@@ -374,14 +374,21 @@
 			<!-- Skript pro načítání dat z textoveho souboru -->
 
    <script>
-        // Načítání textového souboru a aktualizace elementu s id "editable-text"
-        fetch('Editace_textu/data.txt')
-    .then(response => response.text())
-    .then(text => {
-        const editableText = document.getElementById('editable-text');
-        editableText.textContent = text;
-    })
-    .catch(error => console.error('Chyba při načítání souboru:', error));
+// Obecná funkce pro načítání obsahu textového souboru a aktualizaci elementu
+function loadAndUpdateElement(file, elementId) {
+        fetch(file)
+            .then(response => response.text())
+            .then(text => {
+                const editableElement = document.getElementById(elementId);
+                editableElement.textContent = text;
+            })
+            .catch(error => console.error('Chyba při načítání souboru:', error));
+    }
+
+    // Načtení a aktualizace obsahu pro různé elementy
+    loadAndUpdateElement('Editace_textu/logo.txt', 'logo');
+    loadAndUpdateElement('Editace_textu/logo-text.txt', 'logo-text');
+		loadAndUpdateElement('Editace_textu/menu-projekt1.txt', 'menu-projekt1');
     </script>
 
 
