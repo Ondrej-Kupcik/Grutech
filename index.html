@@ -371,28 +371,19 @@
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
 
-			<!-- Skript pro načítání dat z Google Sheets -->
-<script>
-const spreadsheetId = '1l7Zz67sMFxjHg8QmEB0sNBcHpYlK8mxZY8k8UYgpju8'; // ID vašeho Google Sheets dokumentu
-const range = 'Sheet1!A1'; // Rozsah buněk, který chcete načíst (např. list "Sheet1", buňka "A1")
-const apiKey = 'AIzaSyDT-bYMRdXO5b3EZqC4_jsfx1QJ_TStTRA'; // Váš API klíč
+			<!-- Skript pro načítání dat z textoveho souboru -->
 
-// Vytvoření URL pro dotaz na Google Sheets API
-const url = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values/${range}?key=${apiKey}`;
-
-// Načtení dat z Google Sheets API a aktualizace prvku s id "editable-text"
-fetch(url)
-    .then(response => response.json())
-    .then(data => {
-        // Získání hodnoty buňky z odpovědi
-        const cellValue = data.values[0][0]; // První řádek, první sloupec
-        // Získání elementu pro úpravu textu
+   <script>
+        // Načítání textového souboru a aktualizace elementu s id "editable-text"
+        fetch('Editace_textu/data.txt')
+    .then(response => response.text())
+    .then(text => {
         const editableText = document.getElementById('editable-text');
-        // Aktualizace textu v elementu
-        editableText.textContent = cellValue;
+        editableText.textContent = text;
     })
-    .catch(error => console.error('Chyba:', error));
-</script>
+    .catch(error => console.error('Chyba při načítání souboru:', error));
+    </script>
+
 
 	</body>
 </html>
