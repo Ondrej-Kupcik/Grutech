@@ -35,19 +35,76 @@
 			}, 100);
 		});
 
+		//			<!-- Skript pro načítání dat z textoveho souboru -->
+		document.addEventListener("DOMContentLoaded", function() {
+			console.log("DOM fully loaded and parsed");
+	
+			const loadAndUpdateElement = (file, elementId) => {
+					return fetch(file)
+							.then(response => response.text())
+							.then(text => {
+									const editableElement = document.getElementById(elementId);
+									if (editableElement) {
+											editableElement.textContent = text;
+											console.log(`Updated ${elementId} with text:`, text);
+									} else {
+											console.error(`Element with ID ${elementId} not found`);
+									}
+							})
+							.catch(error => console.error(`Error loading ${file}:`, error));
+			};
+	
+			Promise.all([
+					loadAndUpdateElement('Editace_textu/logo.txt', 'logo'),
+					loadAndUpdateElement('Editace_textu/logo-text.txt', 'logo-text'),
+					loadAndUpdateElement('Editace_textu/menu-projekt1.txt', 'menu-projekt1')
+					,loadAndUpdateElement('Editace_textu/menu-projekt2.txt', 'menu-projekt2')
+					,loadAndUpdateElement('Editace_textu/menu-projekt3.txt', 'menu-projekt3')
+					,loadAndUpdateElement('Editace_textu/menu-projekt4.txt', 'menu-projekt4')
+			]).then(() => {
+					console.log("All texts loaded, initializing plugins...");
+	
+	 // Dropdowns.
+	 $('#nav > ul').dropotron({
+				mode: 'fade',
+				speed: 350,
+				noOpenerFade: true,
+				alignment: 'center'
+			});
+	
 		// Scrolly.
-		$('.scrolly').scrolly();
-
-	// Nav.
-
-		// Button.
-			$(
-				'<div id="navButton">' +
-					'<a href="#navPanel" class="toggle"></a>' +
-				'</div>'
-			)
-				.appendTo($body);
-
+			$('.scrolly').scrolly();
+	
+		// Nav.
+	
+			// Button.
+				$(
+					'<div id="navButton">' +
+						'<a href="#navPanel" class="toggle"></a>' +
+					'</div>'
+				)
+					.appendTo($body);
+	
+			// Panel.
+				$(
+					'<div id="navPanel">' +
+						'<nav>' +
+							$('#nav').navList() +
+						'</nav>' +
+					'</div>'
+				)
+					.appendTo($body)
+					.panel({
+						delay: 500,
+						hideOnClick: true,
+						hideOnSwipe: true,
+						resetScroll: true,
+						resetForms: true,
+						target: $body,
+						visibleClass: 'navPanel-visible'
+					});
+					});
+			});
 
 	// Carousels.
 		$('.carousel').each(function() {
