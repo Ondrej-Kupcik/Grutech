@@ -61,6 +61,11 @@
 					,loadAndUpdateElement('Editace_textu/menu-projekt2.txt', 'menu-projekt2')
 					,loadAndUpdateElement('Editace_textu/menu-projekt3.txt', 'menu-projekt3')
 					,loadAndUpdateElement('Editace_textu/menu-projekt4.txt', 'menu-projekt4')
+					,loadAndUpdateElement('Editace_textu/nadpis.txt', 'nadpis')
+					,loadAndUpdateElement('Editace_textu/text-nadpisu.txt', 'text-nadpisu')
+					,loadAndUpdateElement('Editace_textu/Onas.txt', 'Onas')
+					,loadAndUpdateElement('Editace_textu/Onas-slogan.txt', 'Onas-slogan')
+					,loadAndUpdateElement('Editace_textu/Onas-clanek.txt', 'Onas-clanek')
 			]).then(() => {
 					console.log("All texts loaded, initializing plugins...");
 	

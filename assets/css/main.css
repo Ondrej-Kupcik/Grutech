@@ -2175,6 +2175,9 @@ input, select, textarea {
 /* Header */
 
 	#header {
+		display:flex;
+		justify-content: center; /* Horizontální zarovnání na střed */
+    align-items: center; /* Vertikální zarovnání na střed */
 		position: relative;
 		background-image: url("../../images/homescreen.jpg");
 		background-size: cover;
