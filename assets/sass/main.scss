@@ -360,6 +360,7 @@
 			display: block;
 			width: 100%;
 			margin: 0 0 4em 0;
+		
 		}
 
 		&.left {
@@ -1342,6 +1343,11 @@
 					margin: 0 0 1em 0;
 				}
 			}
+
+			#obrazek-onas{
+				max-width: 400px; /* Nastavte maximální šířku obrázku */
+        height: auto; /* Udržuje proporce obrázku */
+    	}
 
 		/* Actions */
 

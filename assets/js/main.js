@@ -66,6 +66,8 @@
 					,loadAndUpdateElement('Editace_textu/Onas.txt', 'Onas')
 					,loadAndUpdateElement('Editace_textu/Onas-slogan.txt', 'Onas-slogan')
 					,loadAndUpdateElement('Editace_textu/Onas-clanek.txt', 'Onas-clanek')
+					,loadAndUpdateElement('Editace_textu/Nadpis-odstavce1.txt', 'Nadpis-odstavce1')
+					,loadAndUpdateElement('Editace_textu/text-odstavce1.txt', 'text-odstavce1')
 			]).then(() => {
 					console.log("All texts loaded, initializing plugins...");
 	
