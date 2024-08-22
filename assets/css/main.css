@@ -2439,6 +2439,7 @@ input, select, textarea {
 				border-left: solid 0.75em rgba(64, 64, 64, 0);
 				border-right: solid 0.75em rgba(64, 64, 64, 0);
 			}
+			
 
 /* Banner */
 
@@ -2746,8 +2747,8 @@ input, select, textarea {
 				line-height: 1.65em;
 			}
 
-			.tweet {
-				text-align: center;
+			.kontakt {
+				display: block;
 			}
 
 			.timestamp {
@@ -3025,7 +3026,7 @@ input, select, textarea {
 					}
 
 					#navPanel .link.depth-0 {
-						color: #ffffff;
+						color: #fff;
 						font-weight: 600;
 					}
 
@@ -3055,7 +3056,7 @@ input, select, textarea {
 				}
 
 				#navPanel .depth-0 {
-					color: #ffffff;
+					color: #fff;
 				}
 
 			body.navPanel-visible #page-wrapper {
@@ -3122,7 +3123,7 @@ input, select, textarea {
 				}
 
 				body.homepage #header h1 {
-					font-size: 70px;
+					font-size: 2.5em;
 				}
 
 		/* Nav */
@@ -3149,6 +3150,7 @@ input, select, textarea {
 				text-align: center;
 			}
 
+
 		/* Footer */
 
 			#footer {
@@ -3157,5 +3159,6 @@ input, select, textarea {
 			}
 
 		/* Carousel */
+
 
 	}
