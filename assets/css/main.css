@@ -3172,10 +3172,14 @@ input, select, textarea {
 					margin: 0 0.5em 0 0;
 				}
 
-				.carousel article .image img {
-					width: 100%;
-					height: 200px; /* Nastavení pevné výšky, upravte podle potřeby */
-					object-fit: cover; /* Umožňuje, aby se obrázek přizpůsobil dané výšce bez deformace */
-			}
+					.carousel article .image {
+						margin-bottom: 2em;
+					}
+
+					.carousel article .image img {
+						width: 100%; /* Obrázek zabere celou šířku svého kontejneru */
+						height: auto; /* Udržuje správný poměr stran */
+						max-width: 100%; /* Zabrání tomu, aby obrázek přesahoval svůj kontejner */
+				}
 
 	}
