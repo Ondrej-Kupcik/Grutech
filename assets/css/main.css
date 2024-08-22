@@ -2245,7 +2245,7 @@ input, select, textarea {
 
 			#header h1 a {
 				color: inherit;
-				font-size: 120px;
+				font-size: 110px;
 			}
 
 		#header .button {
@@ -3122,7 +3122,7 @@ input, select, textarea {
 				}
 
 				body.homepage #header h1 {
-					font-size: 2.5em;
+					font-size: 70px;
 				}
 
 		/* Nav */
@@ -3157,26 +3157,5 @@ input, select, textarea {
 			}
 
 		/* Carousel */
-
-			.carousel {
-				padding: 0.5em 0 0.5em 0;
-			}
-
-				.carousel .reel {
-					padding: 0 0.5em 0 0.5em;
-				}
-
-				.carousel article {
-					width: 14em;
-					padding-bottom: 2em;
-					margin: 0 0.5em 0 0;
-				}
-
-				.carousel article .image img {
-					width: 100%; /* Obrázek zabere celou šířku svého kontejneru */
-					height: 200px; /* Pevně daná výška, upravte dle potřeby */
-					object-fit: cover; /* Obrázek se přizpůsobí dané šířce a výšce bez deformace */
-					max-width: 100%; /* Zabrání tomu, aby obrázek přesahoval svůj kontejner */
-        }
 
 	}
