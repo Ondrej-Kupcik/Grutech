@@ -2652,7 +2652,7 @@ input, select, textarea {
 
 			.carousel article .image img {
 				width: 100%; /* Šířka obrázku přizpůsobená kontejneru */
-				height: 200px; /* Pevná výška pro všechny obrázky */
+				height: 250px; /* Pevná výška pro všechny obrázky */
 				object-fit: cover; /* Zachová proporce a vyplní celý kontejner */
 		}
 
