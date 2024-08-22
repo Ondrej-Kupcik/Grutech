@@ -3171,11 +3171,12 @@ input, select, textarea {
 					padding-bottom: 2em;
 					margin: 0 0.5em 0 0;
 				}
-				
-					.carousel article .image img {
-						width: 100%; /* Obrázek zabere celou šířku svého kontejneru */
-						height: auto; /* Udržuje správný poměr stran */
-						max-width: 100%; /* Zabrání tomu, aby obrázek přesahoval svůj kontejner */
-				}
+
+				.carousel article .image img {
+					width: 100%; /* Obrázek zabere celou šířku svého kontejneru */
+					height: 200px; /* Pevně daná výška, upravte dle potřeby */
+					object-fit: cover; /* Obrázek se přizpůsobí dané šířce a výšce bez deformace */
+					max-width: 100%; /* Zabrání tomu, aby obrázek přesahoval svůj kontejner */
+        }
 
 	}
