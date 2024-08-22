@@ -3171,11 +3171,7 @@ input, select, textarea {
 					padding-bottom: 2em;
 					margin: 0 0.5em 0 0;
 				}
-
-					.carousel article .image {
-						margin-bottom: 2em;
-					}
-
+				
 					.carousel article .image img {
 						width: 100%; /* Obrázek zabere celou šířku svého kontejneru */
 						height: auto; /* Udržuje správný poměr stran */
