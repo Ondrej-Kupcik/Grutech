@@ -129,6 +129,10 @@ input, select, textarea {
 		font-size: 2.85em;
 	}
 
+	#features h2 {
+    margin-bottom: 50px;
+}
+
 	h3 {
 		font-size: 1.25em;
 	}
@@ -137,6 +141,11 @@ input, select, textarea {
 		font-size: 1em;
 		margin: 0 0 0.25em 0;
 	}
+
+	.description {
+    line-height: 1.2; /* Zvětší mezery mezi řádky */
+    margin-bottom: 1.2em; /* Přidá prostor pod každým odstavcem */
+}
 
 	strong, b {
 		font-weight: 400;
@@ -1770,6 +1779,7 @@ input, select, textarea {
 			margin: 1em 0 2em 0;
 			line-height: 1.5em;
 			text-align: inherit;
+			font-weight: bolder;
 		}
 
 	footer {
@@ -1779,10 +1789,11 @@ input, select, textarea {
 /* Image */
 
 #obrazek-onas {
-	max-width: 300px;   /* Nastavte maximální šířku obrázku */
+	max-width: 180px;   /* Nastavte maximální šířku obrázku */
 	height: auto;       /* Udržuje proporce obrázku */
-	display: block;     /* Ujistěte se, že obrázek je blokový prvek pro správné centrování */
+	display: flex;     /* Ujistěte se, že obrázek je blokový prvek pro správné centrování */
 	margin: 0 auto;    /* Horizontální centrování obrázku v rámci kontejneru */
+	pointer-events: none; /* Zakáže klikání na obrázek */
 }
 
 	.image {
@@ -1802,10 +1813,19 @@ input, select, textarea {
 			width: 100%;
 		}
 
-		.image.featured {
-			display: block;
+		.image.onas{
+			display: inline-block;
 			width: 100%;
 			margin: 0 0 4em 0;
+			pointer-events: none;
+			margin-bottom: 10px;
+		}
+
+		.image.featured {
+			display: inline-block;
+			width: 100%;
+			margin: 0 0 4em 0;
+			
 		}
 
 		.image.left {
@@ -2103,6 +2123,7 @@ input, select, textarea {
 				background: #3B353C;
 			}
 
+
 /* Post */
 
 	.post.stub {
@@ -2239,13 +2260,14 @@ input, select, textarea {
 
 		#header h1 {
 			color: #fff;
-			font-size: 3em;
-			line-height: 1em;
+			font-size: 2em;
+			line-height: 1.5em;
+			font-weight: bold;
 		}
 
 			#header h1 a {
 				color: inherit;
-				font-size: 110px;
+				font-size: 80px;
 			}
 
 		#header .button {
@@ -2479,6 +2501,7 @@ input, select, textarea {
 	#sidebar > section {
 		margin-bottom: 0;
 	}
+
 
 /* Main */
 
@@ -3157,8 +3180,4 @@ input, select, textarea {
 				padding-left: 1em;
 				padding-right: 1em;
 			}
-
-		/* Carousel */
-
-
 	}
